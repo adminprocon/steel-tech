@@ -6,34 +6,33 @@ export const products = [
   {
     slug: "fire-rated-doors",
     no: "01",
-    name: "Fire Rated Doors",
+    name: "Fire Rated Steel Doors",
     tag: "Protection systems",
     short: "Up to 2-hour rated steel assemblies engineered for commercial, industrial, institutional, and hospitality spaces.",
     intro: "Our fire-rated steel doors are engineered to contain flame, smoke, and heat for a certified duration, buying critical time for evacuation and emergency response without giving up daily usability.",
     features: [
       "Tested to IS 3614 Part II-1992 and BS 476 part 20 and 22, rated 60 to 120 minutes",
-      "Flash butt welded steel construction to IS 1038 / IS 1361",
       "Intumescent seals that expand under heat to block smoke",
-      "Self-closing hardware compatible with Dorma, Dorset, Yale, and Geze fittings",
+      "Self-closing hardware compatible with Dorma, Geze & Yale fittings",
       "Vision panels available in fire-rated glass",
-      "Powder-coated finish in standard and custom RAL colours",
+      "Acrylic Aliphatic PU Paint finish, having UV resistance & salt spray resistance in standard and custom RAL colours",
     ],
     applications: ["Stairwells and escape corridors", "Server rooms and electrical risers", "Hotels and hospitality kitchens", "Factories and warehouses", "Hospitals and institutional buildings"],
     icon: "flame",
     image: "/images/products/fire-rated-doors.jpg",
-    imageAlt: "SteelTech fire-rated steel doors, red and cream finish",
+    imageAlt: "Red fire-rated steel double door with vision panels, installed at a building stairwell",
   },
   {
     slug: "scientific-doors",
     no: "02",
-    name: "Scientific Doors",
+    name: "Scientific Steel Doors",
     tag: "Controlled environments",
     short: "Purpose-built access for labs, hospitals, clean rooms, and facilities where every detail matters.",
     intro: "Scientific doors are built for spaces where contamination control, pressure differentials, and hygiene are non-negotiable: laboratories, clean rooms, operation theatres, and pharmaceutical facilities.",
     features: [
       "Seamless, crevice-free surfaces for easy sanitisation",
       "Air-tight gasketing for pressure-controlled rooms",
-      "Antibacterial powder coating options",
+      "Acrylic Aliphatic PU Paint finish",
       "Radiation-shielded variants for imaging and lab rooms",
       "Compatible with automatic sliding and sensor hardware",
       "Chemical and corrosion-resistant finishes",
@@ -41,37 +40,35 @@ export const products = [
     applications: ["Hospital operation theatres", "Pharmaceutical clean rooms", "Research laboratories", "Imaging and radiology suites", "Food processing facilities"],
     icon: "flask-conical",
     image: "/images/products/scientific-doors.jpg",
-    imageAlt: "SteelTech scientific and clean-room doors in a pharma corridor",
+    imageAlt: "Brushed stainless steel double doors with vision panels, installed in a scientific facility",
   },
   {
     slug: "general-purpose-doors",
     no: "03",
-    name: "General Purpose Doors",
+    name: "General Purpose Steel Doors",
     tag: "Everyday strength",
     short: "Durable steel door solutions for homes, utility zones, offices, and high-traffic applications.",
     intro: "Our general-purpose steel doors bring the same engineering discipline as our specialist ranges to everyday openings: homes, offices, utility rooms, and high-footfall commercial spaces.",
     features: [
-      "Flash butt welded steel frame and shutter",
       "35+ design and panelling options",
       "Standard and custom sizes to fit any opening",
       "Termite-proof and warp-resistant by material",
-      "5-year manufacturer warranty",
+      "1-year manufacturer warranty and life time service support",
       "Optional insulated core for acoustic and thermal comfort",
     ],
     applications: ["Residential entrances and utility doors", "Office and retail entries", "Warehouses and back-of-house areas", "Educational institutions", "Multi-family residential blocks"],
     icon: "door-closed",
     image: "/images/products/general-purpose-doors.jpg",
-    imageAlt: "SteelTech general purpose single and double steel doors",
+    imageAlt: "Off-white general purpose steel double door with granite surround and steel handles",
   },
   {
     slug: "aluminium-glass-doors",
     no: "04",
-    name: "Aluminium & Glass Doors",
+    name: "Fully Glass Steel Doors",
     tag: "Architectural openings",
-    short: "Slim-profile aluminium framing paired with toughened glass for a light, modern façade.",
-    intro: "For openings where visibility, daylight, and a contemporary façade matter as much as security, our aluminium and glass systems combine slim structural framing with toughened or laminated glass.",
+    short: "Slim-profile steel framing paired with toughened glass for a light, modern façade.",
+    intro: "For openings where visibility, daylight, and a contemporary façade matter as much as security, our fully glass steel door systems combine slim structural steel framing with toughened or laminated glass.",
     features: [
-      "Anodised or powder-coated aluminium framing",
       "Toughened / laminated safety glass to IS standards",
       "Sliding, swing, and partition configurations",
       "Thermal-break profiles for energy efficiency",
@@ -81,20 +78,20 @@ export const products = [
     applications: ["Corporate lobbies and reception areas", "Retail storefronts", "Conference and partition walls", "Balconies and facades", "Showrooms"],
     icon: "square-stack",
     image: "/images/products/aluminium-glass-doors.jpg",
-    imageAlt: "SteelTech economic Galvalume steel door",
+    imageAlt: "Fully glass steel-framed double door entrance with side panels and pull handles",
   },
 ] as const;
 
 export const benefits = [
   { no: "01", title: "4x stronger than wood", desc: "High-impact steel construction outperforms timber on raw strength and dimensional stability." },
-  { no: "02", title: "Termite & pest resistant", desc: "Steel does not attract termites or borers, so no chemical treatment is ever required." },
-  { no: "03", title: "12x superior finish", desc: "Powder-coated surfaces hold their finish far longer than painted wood under daily wear." },
+  { no: "02", title: "Termite & pest resistant", desc: "Steel doors do not attract termites or borers, so no chemical treatment is ever required." },
+  { no: "03", title: "12x superior finish", desc: "PU Paint coated surfaces hold their finish far longer than painted wood under daily wear." },
   { no: "04", title: "Fire-resistant by material", desc: "Steel's natural properties are the foundation of our certified fire-rated range." },
   { no: "05", title: "35+ design options", desc: "From flush panels to moulded profiles, there is a design language for every façade." },
   { no: "06", title: "Eco-friendly manufacturing", desc: "No trees are cut. Every door is built from engineered steel and recyclable components." },
   { no: "07", title: "7x more warp-resistant", desc: "Steel holds its shape through heat, humidity, and years of daily use without warping." },
   { no: "08", title: "Weatherproof construction", desc: "Built to perform in coastal humidity, monsoon exposure, and daily temperature swings." },
-  { no: "09", title: "5-year warranty", desc: "Every door ships with a manufacturer warranty backing material and workmanship." },
+  { no: "09", title: "1 Year Warranty", desc: "Every door ships with a 1-year manufacturer warranty and life time service support." },
   { no: "10", title: "Maintenance-free", desc: "No repainting, resealing, or seasonal upkeep. Wipe-clean surfaces stay presentable for years." },
   { no: "11", title: "Value engineered", desc: "Lower lifetime cost than timber once you account for replacement, repair, and treatment." },
 ] as const;
@@ -113,22 +110,35 @@ export const timeline = [
   { year: "Today", title: "Royal Fab Group venture", desc: "Operating as part of the Royal Fab Group, serving commercial, institutional, and residential clients across South India." },
 ] as const;
 
-export const hardwarePartners = ["Dorma", "Dorset", "Yale", "Geze"] as const;
+export const productRange = [
+  "Fire Rated Steel Doors",
+  "Scientific Steel Doors",
+  "General Purpose Steel Doors",
+  "Fully Glass Steel Doors",
+  "Lead Line Steel Doors",
+  "Stainless Steel Doors",
+  "Floor Spring & Double Action Hinged Doors",
+  "Pressed Steel Door Frames",
+  "Pressed Steel Louver Ventilators",
+  "Double Glassed Vision Panel",
+] as const;
+
+export const hardwarePartners = ["Dorma", "Geze", "Yale"] as const;
 
 export const accessories = [
-  { name: "Door Closers", desc: "Hydraulic and cam-action closers for controlled, self-closing operation on every door category." },
-  { name: "Panic & Exit Hardware", desc: "Push-bar exit devices for fire-rated and high-occupancy doors, built to release instantly under pressure." },
-  { name: "Locks & Cylinders", desc: "Mortise locks, digital locks, and multi-point locking systems sourced from certified hardware partners." },
+  { name: "Door Closers", desc: "Hydraulic and cam-action and hold open closers for controlled, self-closing operation on every door category." },
+  { name: "Panic & Exit Hardware", desc: "Push-bar exit devices with or without external trim for fire-rated and high-occupancy doors, built to release instantly under pressure." },
+  { name: "Locks & Cylinders", desc: "Mortise dead locks, sash lock, digital locks, cylindrical knob lock and multi-point locking systems sourced from certified hardware partners." },
   { name: "Hinges & Pivots", desc: "Ball-bearing hinges and floor-spring pivots rated for high-frequency commercial use." },
   { name: "Vision Panels", desc: "Fire-rated and standard glazing inserts for visibility without compromising protection." },
-  { name: "Seals & Thresholds", desc: "Intumescent, acoustic, and weather seals fitted to match each door's performance rating." },
+  { name: "Seals & Thresholds", desc: "Intumescent, acoustic, weather seals and GI & SS threshold fitted to match each door's performance rating." },
 ] as const;
 
 export const certifications = [
   { title: "IS 1038 / IS 1361", desc: "Steel window and door manufacturing standards followed since the company's founding." },
   { title: "IS 3614 Part II / BS 476", desc: "Fire doors are tested to IS 3614 Part II-1992 and BS 476 part 20 and 22, rated 60 to 120 minutes for stability and integrity." },
-  { title: "Hardware Compliance", desc: "Only certified hardware from Dorma, Dorset, Yale, and Geze is specified on rated assemblies." },
-  { title: "5-Year Warranty", desc: "Every installation is backed by a manufacturer warranty on material and workmanship." },
+  { title: "Hardware Compliance", desc: "Only certified hardware from Dorma, Geze and Yale is specified on rated assemblies." },
+  { title: "1 Year Warranty", desc: "Every installation is backed by a 1-year manufacturer warranty and life time service support." },
 ] as const;
 
 export const qualityPolicy = [
@@ -146,7 +156,7 @@ export const serviceOfferings = [
 ] as const;
 
 export const assurance = [
-  { title: "5-year manufacturer warranty", desc: "Every door we manufacture is backed by a 5-year warranty covering material and workmanship." },
+  { title: "1-year manufacturer warranty", desc: "Every door we manufacture is backed by a 1-year manufacturer warranty and life time service support." },
   { title: "1-year installation warranty", desc: "When installation is supervised and certified by a Steeltech engineer, the installation itself is covered for one year." },
   { title: "ISO 9001:2008 aligned", desc: "Our quality management system follows the International series ISO 9001:2008." },
   { title: "Engineers on call", desc: "A dedicated point of contact for spares, adjustments, and after-sales support for the life of the installation." },

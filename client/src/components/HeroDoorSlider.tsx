@@ -1,19 +1,19 @@
 import { InfiniteSlider } from "@/components/core/infinite-slider";
 
 const columnA = [
-  { src: "/images/hero-doors/door-modern-black-glass.jpg", alt: "Modern black door with glass panels" },
-  { src: "/images/hero-doors/door-black-glass-frame.jpg", alt: "Black wooden framed glass door" },
-  { src: "/images/hero-doors/door-gray-wood.jpg", alt: "Gray wooden door entrance" },
-  { src: "/images/hero-doors/door-with-window.jpg", alt: "Door with a glazed window panel" },
-  { src: "/images/hero-doors/door-closed-brown-1.jpg", alt: "Closed brown wooden door" },
+  { src: "/images/hero-doors/door-fire-exit-red.jpg", alt: "Red fire exit steel door installation" },
+  { src: "/images/hero-doors/door-restroom-blue.jpg", alt: "Blue steel restroom door" },
+  { src: "/images/hero-doors/door-cleanroom-sliding.jpg", alt: "Sliding steel door for a cleanroom environment" },
+  { src: "/images/hero-doors/door-double-blue.jpg", alt: "Double-leaf blue steel doors" },
+  { src: "/images/hero-doors/door-restricted-blue.jpg", alt: "Blue steel door marked for restricted access" },
 ];
 
 const columnB = [
-  { src: "/images/hero-doors/door-modern-entrance.jpg", alt: "Modern black entrance with steps" },
-  { src: "/images/hero-doors/door-black-welcome-mat.jpg", alt: "Black front door on a wooden porch" },
-  { src: "/images/hero-doors/door-brown-wood.jpg", alt: "Brown wooden door detail" },
-  { src: "/images/hero-doors/door-green-panel.jpg", alt: "Door with a green paneled design" },
-  { src: "/images/hero-doors/door-closed-brown-2.jpg", alt: "Closed brown wooden door, wide" },
+  { src: "/images/hero-doors/door-emergency-exit-red.jpg", alt: "Red emergency exit steel door" },
+  { src: "/images/hero-doors/door-staffroom-granite.jpg", alt: "Steel staffroom door with granite-finish surround" },
+  { src: "/images/hero-doors/door-electrical-room.jpg", alt: "Steel door for an electrical room" },
+  { src: "/images/hero-doors/door-server-room.jpg", alt: "Steel door for a server room" },
+  { src: "/images/hero-doors/door-fire-exit-grey.jpg", alt: "Grey fire exit steel door" },
 ];
 
 /** Two counter-scrolling columns of door photography for the hero's right side. Hidden below lg since the hero

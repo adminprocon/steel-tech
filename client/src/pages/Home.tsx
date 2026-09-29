@@ -71,7 +71,7 @@ export default function Home() {
           </div>
           <Reveal delay={0.1} className="intro-body">
             <p className="lead">We manufacture and install steel door systems for homes, businesses, and critical environments across South India.</p>
-            <p>From fire-rated assemblies and scientific doors to glass, aluminium, and general-purpose access, Steeltech brings dependable materials and considered detailing to every opening.</p>
+            <p>From fire-rated assemblies and scientific doors to fully glass steel doors and general-purpose access, Steeltech brings dependable materials and considered detailing to every opening.</p>
             <Link className="text-link" href="/about">
               Meet the people behind the product <ArrowRight size={16} />
             </Link>

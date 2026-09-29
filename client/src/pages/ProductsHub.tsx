@@ -23,7 +23,7 @@ export default function ProductsHub() {
             <span>real world.</span>
           </>
         }
-        lead="Every opening is different. Choose the system built for yours, from certified fire protection to a light-filled aluminium and glass façade."
+        lead="Every opening is different. Choose the system built for yours, from certified fire protection to light-filled fully glass steel doors."
       />
 
       <section className="products section-pad dark-section">

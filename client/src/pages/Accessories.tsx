@@ -54,7 +54,7 @@ export default function Accessories() {
           <Reveal delay={0.1} className="quality-copy" style={{ color: "#111315" }}>
             <p className="eyebrow">Sourced from certified partners</p>
             <p style={{ color: "#656a65" }}>
-              We only specify hardware from manufacturers whose testing and certification hold up on rated assemblies: Dorma, Dorset, Yale, and Geze, so the door performs
+              We only specify hardware from manufacturers whose testing and certification hold up on rated assemblies: Dorma, Geze and Yale, so the door performs
               exactly as designed for the life of the installation.
             </p>
           </Reveal>

@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
@@ -6,7 +6,7 @@ import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import { SiteImage } from "@/components/SiteImage";
 import StatStrip from "@/components/StatStrip";
 import CTASection from "@/components/CTASection";
-import { timeline } from "@/data/site";
+import { productRange, timeline } from "@/data/site";
 
 export default function About() {
   return (
@@ -38,10 +38,19 @@ export default function About() {
           <Reveal delay={0.1} className="intro-body">
             <p className="lead">Steeltech Industries began in 1995 manufacturing flash butt welded steel windows, roof trusses, and building accessories to IS 1038 / IS 1361 standards.</p>
             <p>
-              In 2005 we expanded into pressed steel flush doors, and over the following decade grew into a dedicated fire-rated door specialist, integrating global testing
-              standards into local manufacturing. Today, as part of the Royal Fab Group, we supply and install fire-rated, scientific, general-purpose, and aluminium and glass door systems for
-              commercial, institutional, and residential clients across Chennai and Pondicherry.
+              In 2005 we expanded into pressed steel flush doors, and over the following decade grew into a dedicated 2hrs. fire-rated door specialist, integrating global
+              testing standards into local manufacturing. Today, as part of the Royal Fab Group, we supply and install 2hrs. fire-rated steel doors, scientific steel doors,
+              general-purpose steel doors, lead line steel doors and fully glass steel door systems for commercial, institutional, and residential clients across South India.
             </p>
+            <p className="eyebrow">Products</p>
+            <ul className="feature-list product-range">
+              {productRange.map((item) => (
+                <li key={item}>
+                  <Check size={16} />
+                  {item}
+                </li>
+              ))}
+            </ul>
             <Link className="text-link" href="/quality">
               See our quality standards <ArrowRight size={16} />
             </Link>

@@ -11,7 +11,7 @@ export function SiteImage({
   icon: Icon = ImageIcon,
   className = "",
 }: {
-  src: string;
+  src?: string;
   alt: string;
   label?: string;
   icon?: LucideIcon;
@@ -19,7 +19,7 @@ export function SiteImage({
 }) {
   const [errored, setErrored] = useState(false);
 
-  if (errored) {
+  if (!src || errored) {
     return (
       <div className={`site-image-fallback ${className}`} role="img" aria-label={alt}>
         <div className="site-image-fallback-grid" />

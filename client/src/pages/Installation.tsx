@@ -28,7 +28,8 @@ export default function Installation() {
       <section className="quality section-pad">
         <div className="quality-layout">
           <Reveal className="quality-image">
-            <SiteImage src="/images/factory/cutting.jpg" alt="Steeltech sheet metal cutting line" icon={Factory} label="Manufacturing" />
+            {/* Photo removed pending replacement image from Steeltech. */}
+            <SiteImage alt="Steeltech installation" icon={Factory} label="Manufacturing" />
             <span style={{ color: "#111315" }}>MANUFACTURED IN-HOUSE / INSTALLED BY US</span>
           </Reveal>
           <Reveal delay={0.1} className="quality-copy">
