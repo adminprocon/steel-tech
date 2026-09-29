@@ -1,6 +1,6 @@
-import { useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { animate, motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Check } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { RevealStagger, staggerItem } from "@/components/Reveal";
 
 const EASE = [0.23, 1, 0.32, 1] as [number, number, number, number];
@@ -305,13 +305,45 @@ function DoorGlyph({ v }: { v: Variant }) {
 }
 function DesignCard() {
   const trackRef = useRef<HTMLDivElement>(null);
+  const innerRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
-  const progress = useTransform(x, [0, -380], [0, 1]);
+  const [max, setMax] = useState(0);
+
+  // Measure how far the strip can travel so it always stays inside the card, at every width.
+  useEffect(() => {
+    const measure = () => {
+      if (!trackRef.current || !innerRef.current) return;
+      const m = Math.max(0, innerRef.current.scrollWidth - trackRef.current.clientWidth);
+      setMax(m);
+      if (x.get() < -m) x.set(-m);
+    };
+    measure();
+    const ro = new ResizeObserver(measure);
+    if (trackRef.current) ro.observe(trackRef.current);
+    return () => ro.disconnect();
+  }, [x]);
+
+  const progress = useTransform(x, (v) => (max ? Math.min(1, Math.max(0, -v / max)) : 0));
+  const step = (dir: 1 | -1) => {
+    const target = Math.min(0, Math.max(-max, x.get() - dir * 168));
+    animate(x, target, { duration: 0.6, ease: EASE });
+  };
+
   return (
     <BentoCard className="b-designs">
-      <span className="b-no">05 / 35+ design options</span>
+      <div className="b-head">
+        <span className="b-no">05 / 35+ design options</span>
+        <div className="b-arrows">
+          <button onClick={() => step(-1)} aria-label="Previous door styles">
+            <ChevronLeft size={16} />
+          </button>
+          <button onClick={() => step(1)} aria-label="Next door styles">
+            <ChevronRight size={16} />
+          </button>
+        </div>
+      </div>
       <div className="b-strip" ref={trackRef}>
-        <motion.div className="b-strip-inner" drag="x" dragConstraints={{ left: -380, right: 0 }} dragElastic={0.12} style={{ x }}>
+        <motion.div ref={innerRef} className="b-strip-inner" drag="x" dragConstraints={{ left: -max, right: 0 }} dragElastic={0.08} style={{ x }}>
           {styles.map((s) => (
             <figure key={s.v}>
               <DoorGlyph v={s.v} />
@@ -325,7 +357,7 @@ function DesignCard() {
       </div>
       <div>
         <h3>From flush panels to moulded profiles.</h3>
-        <p>Drag the strip to browse a few of the 35+ leaf designs.</p>
+        <p>Drag or use the arrows to browse a few of the 35+ leaf designs.</p>
       </div>
     </BentoCard>
   );

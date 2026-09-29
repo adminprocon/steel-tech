@@ -1,118 +1,19 @@
 /* Design philosophy: Light Industrial Precision. Proof-first hierarchy, warm paper surfaces, the logo's red as the only signal colour,
    and scroll-earned motion: mask-rising headlines, a pinned systems stage, word-lit tagline, and a rail that fills as you read. */
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowUpRight, Check } from "lucide-react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
-import { InfiniteSlider } from "@/components/core/infinite-slider";
 import { ClipReveal, Reveal } from "@/components/Reveal";
 import { MaskLines, WordReveal, useParallax } from "@/components/motion";
 import StatStrip from "@/components/StatStrip";
 import CTASection from "@/components/CTASection";
 import ProcessRail from "@/components/ProcessRail";
 import ProductShowcase from "@/components/home/ProductShowcase";
+import Hero from "@/components/home/Hero";
 import IndustryList from "@/components/home/IndustryList";
 import Bento from "@/components/home/Bento";
-import { certifications, clients, hardwarePartners } from "@/data/site";
-
-const EASE = [0.23, 1, 0.32, 1] as [number, number, number, number];
-
-function Hero() {
-  const { scrollY } = useScroll();
-  const photoY = useTransform(scrollY, [0, 800], [0, 120]);
-  const cardY = useTransform(scrollY, [0, 800], [0, -60]);
-
-  return (
-    <section className="hero" aria-labelledby="hero-title">
-      <div className="hero-blueprint" />
-      <div className="container hero-grid">
-        <div>
-          <motion.p className="eyebrow" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: EASE }}>
-            Steel door systems / Since 1995
-          </motion.p>
-          <MaskLines id="hero-title" className="hero-title" lines={["Built to", "hold the line."]} accent={[1]} />
-          <motion.p
-            className="hero-copy"
-            initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 0.9, delay: 0.35, ease: EASE }}
-          >
-            2 hour fire rated, scientific, general purpose and fully glass steel doors, manufactured in house and installed by our own teams across South India.
-          </motion.p>
-          <motion.div className="hero-actions" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.5, ease: EASE }}>
-            <Link className="btn btn-red" href="/contact">
-              Get a quote
-              <span className="btn-icon">
-                <ArrowUpRight size={18} />
-              </span>
-            </Link>
-            <Link className="btn btn-ghost" href="/products">
-              Explore door systems
-            </Link>
-          </motion.div>
-          <motion.div className="hero-proof" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.75 }}>
-            <div>
-              <strong>30+</strong>
-              <span>Years in steel</span>
-            </div>
-            <div>
-              <strong>120</strong>
-              <span>Minute fire rating</span>
-            </div>
-            <div>
-              <strong>{clients.length}+</strong>
-              <span>Enterprise clients</span>
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="hero-visual">
-          <motion.div
-            className="hero-photo"
-            initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
-            animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
-            transition={{ duration: 1.4, delay: 0.15, ease: [0.77, 0, 0.175, 1] }}
-          >
-            <motion.img
-              src="/images/products/fire-rated-doors.jpg"
-              alt="Red Steeltech fire rated double steel door installed in a corridor"
-              style={{ y: photoY, scale: 1.12 }}
-              initial={{ scale: 1.3 }}
-              animate={{ scale: 1.12 }}
-              transition={{ duration: 1.8, delay: 0.15, ease: EASE }}
-            />
-          </motion.div>
-          <motion.div className="hero-photo-2" style={{ y: cardY }} initial={{ opacity: 0, y: 60 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.9, ease: EASE }}>
-            <img src="/images/hero-doors/door-double-blue.jpg" alt="Blue double leaf steel doors" />
-          </motion.div>
-          <motion.div className="spec-card" initial={{ opacity: 0, y: -16, scale: 0.96 }} animate={{ opacity: 1, y: 0, scale: 1 }} transition={{ duration: 0.8, delay: 1.1, ease: EASE }}>
-            <div className="spec-top">
-              <span>Fire rating</span>
-              <span className="live">Tested</span>
-            </div>
-            <strong>
-              120<small>min</small>
-            </strong>
-            <p>IS 3614 Part II and BS 476 part 20 and 22</p>
-            <div className="spec-bar">
-              <motion.i initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ duration: 1.6, delay: 1.4, ease: EASE }} />
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
-      <div className="hero-marquee">
-        <span>Trusted on sites for</span>
-        <InfiniteSlider gap={64} duration={40} durationOnHover={90} className="logo-strip">
-          {clients.map((client) => (
-            <img key={client.file} src={client.logo} alt={client.name} loading="lazy" />
-          ))}
-        </InfiniteSlider>
-      </div>
-    </section>
-  );
-}
-
+import { certifications, hardwarePartners } from "@/data/site";
 
 export default function Home() {
   const quality = useParallax(50);
