@@ -1,11 +1,10 @@
 /* Design philosophy: Light Industrial Precision. Proof-first hierarchy, warm paper surfaces, the logo's red as the only signal colour,
    and scroll-earned motion: mask-rising headlines, a pinned systems stage, word-lit tagline, and a rail that fills as you read. */
-import { motion } from "framer-motion";
 import { ArrowUpRight, Check } from "lucide-react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
-import { ClipReveal, Reveal } from "@/components/Reveal";
-import { MaskLines, WordReveal, useParallax } from "@/components/motion";
+import { Reveal } from "@/components/Reveal";
+import { MaskLines, WordReveal } from "@/components/motion";
 import StatStrip from "@/components/StatStrip";
 import CTASection from "@/components/CTASection";
 import ProcessRail from "@/components/ProcessRail";
@@ -13,10 +12,10 @@ import ProductShowcase from "@/components/home/ProductShowcase";
 import Hero from "@/components/home/Hero";
 import IndustryList from "@/components/home/IndustryList";
 import Bento from "@/components/home/Bento";
+import DoorAnatomy from "@/components/home/DoorAnatomy";
 import { certifications, hardwarePartners } from "@/data/site";
 
 export default function Home() {
-  const quality = useParallax(50);
 
   return (
     <Layout>
@@ -122,12 +121,9 @@ export default function Home() {
 
       <section className="section" id="quality">
         <div className="container split">
-          <ClipReveal className="split-media">
-            <div ref={quality.ref} style={{ height: "100%" }}>
-              <motion.img src="/images/factory/pressbrake.jpg" alt="Steeltech technician operating a CNC press brake" loading="lazy" style={quality.style} />
-            </div>
-            <span className="media-tag">Made in house / Chennai</span>
-          </ClipReveal>
+          <Reveal>
+            <DoorAnatomy />
+          </Reveal>
           <div className="split-copy">
             <Reveal>
               <p className="eyebrow">Quality you can specify</p>

@@ -648,6 +648,40 @@ a.contact-row:hover { color: var(--red); }
   .cta-card { border-radius: 24px; }
   .tagline-meta { flex-direction: column; }
 }
+/* ---------- Door anatomy (axonometric exploded drawing) ---------- */
+.anatomy { position: relative; border-radius: var(--radius-lg); background: var(--white); border: 1px solid var(--line); padding: 24px; overflow: hidden; isolation: isolate; }
+.anatomy::before { content: ""; position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 24px 24px; opacity: 0.55; -webkit-mask-image: radial-gradient(ellipse at 55% 40%, #000 20%, transparent 75%); mask-image: radial-gradient(ellipse at 55% 40%, #000 20%, transparent 75%); }
+.anatomy-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.anatomy-head .eyebrow { margin: 0; }
+.anatomy-toggle { display: inline-flex; align-items: center; gap: 8px; height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--white); font-size: 14px; font-weight: 600; cursor: pointer; transition: background-color 200ms ease, transform 160ms var(--ease-out); }
+.anatomy-toggle:hover { background: var(--paper); }
+.anatomy-toggle:active { transform: scale(0.97); }
+.anatomy-svg { display: block; width: 100%; height: auto; max-height: 560px; margin: 8px auto 0; overflow: visible; }
+.anatomy-svg g { cursor: pointer; }
+.an-shadow { fill: rgba(18, 19, 22, 0.08); }
+.an-frame { fill: #c9ccd0; stroke: var(--ink-2); stroke-width: 1; }
+.an-skin-rear { fill: #e4e6e8; stroke: #8a9097; stroke-width: 1; }
+.an-core { stroke: #b8a27a; stroke-width: 1; }
+.an-seal { fill: none; stroke: var(--red); stroke-width: 6; stroke-dasharray: 2 5; }
+.an-skin-front { fill: var(--red); stroke: var(--red-deep); stroke-width: 1; }
+.an-glass rect { fill: rgba(190, 219, 232, 0.85); stroke: #8fb3c4; stroke-width: 1; }
+.an-glass path { stroke: rgba(255, 255, 255, 0.9); stroke-width: 2; fill: none; }
+.an-hw rect { fill: #d9dcdf; stroke: var(--ink-2); stroke-width: 1; }
+.an-hw path { stroke: #9aa0a6; }
+.anatomy-svg .is-on { filter: drop-shadow(0 10px 18px rgba(18, 19, 22, 0.28)); }
+.an-marker { fill: var(--ink); }
+.anatomy-svg .is-on .an-marker { fill: var(--red); }
+.an-marker-text { fill: #fff; font: 500 11px var(--font-mono); }
+.anatomy-legend { list-style: none; margin: 16px 0 0; padding: 16px 0 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+.anatomy-legend button { width: 100%; display: flex; align-items: flex-start; gap: 12px; padding: 8px; border: 0; border-radius: 10px; background: transparent; text-align: left; cursor: pointer; transition: background-color 200ms ease; }
+.anatomy-legend button:hover, .anatomy-legend button.on { background: var(--paper); }
+.anatomy-legend i { font: 500 11px/20px var(--font-mono); font-style: normal; color: var(--red); }
+.anatomy-legend b { display: block; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--ink); }
+.anatomy-legend small { display: block; font-size: 12px; line-height: 16px; color: var(--muted-ink); }
+@media (max-width: 600px) {
+  .anatomy { padding: 16px; }
+  .anatomy-legend { grid-template-columns: 1fr; }
+}
 /* ---------- Extra breakpoints: large desktop, short laptop screens, small phones, touch ---------- */
 @media (min-width: 1600px) {
   :root { --maxw: 1520px; }
