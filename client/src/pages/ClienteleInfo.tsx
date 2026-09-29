@@ -3,7 +3,7 @@ import { useParams } from "wouter";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import { RevealStagger, staggerItem } from "@/components/Reveal";
+import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
 import CTASection from "@/components/CTASection";
 import { qualityPolicy, serviceOfferings, assurance, certificationImages } from "@/data/site";
 import NotFound from "./NotFound";
@@ -24,7 +24,7 @@ const pages: Record<
 > = {
   certifications: {
     index: "07",
-    section: "CERTIFICATIONS",
+    section: "Certifications",
     eyebrow: "Standards we build to",
     title: (
       <>
@@ -39,7 +39,7 @@ const pages: Record<
   },
   "our-approach": {
     index: "08",
-    section: "OUR APPROACH",
+    section: "Our approach",
     eyebrow: "How we take on a project",
     title: (
       <>
@@ -53,7 +53,7 @@ const pages: Record<
   },
   assurance: {
     index: "09",
-    section: "ASSURANCE",
+    section: "Assurance",
     eyebrow: "What we stand behind",
     title: (
       <>
@@ -73,32 +73,41 @@ export default function ClienteleInfo() {
 
   if (!page) return <NotFound />;
 
+  const columns = page.cards.length === 4 ? "card-grid two" : "card-grid";
+
   return (
     <Layout>
-      <PageHero index={page.index} section={page.section} eyebrow={page.eyebrow} title={page.title} lead={page.lead} />
+      <PageHero index={page.index} section={page.section} parent={{ label: "Clientele", href: "/clientele" }} eyebrow={page.eyebrow} title={page.title} lead={page.lead} />
 
-      <section className="section-pad">
-        <RevealStagger className="simple-grid">
-          {page.cards.map((card) => (
-            <motion.div variants={staggerItem} className="simple-card" key={card.title}>
-              <h3>{card.title}</h3>
-              <p>{card.desc}</p>
-            </motion.div>
-          ))}
-        </RevealStagger>
+      <section className="section">
+        <div className="container">
+          <RevealStagger className={columns}>
+            {page.cards.map((card, i) => (
+              <motion.div variants={staggerItem} className="info-card" key={card.title}>
+                <span className="ic-no">{String(i + 1).padStart(2, "0")}</span>
+                <h3>{card.title}</h3>
+                <p>{card.desc}</p>
+              </motion.div>
+            ))}
+          </RevealStagger>
+        </div>
       </section>
 
       {page.images && (
-        <section className="section-pad dark-section" style={{ paddingTop: 60 }}>
-          <p className="eyebrow light" style={{ textAlign: "center" }}>
-            <span className="amber-dot" /> Certificate on file
-          </p>
-          <div className="cert-image-row">
-            {page.images.map((img) => (
-              <div className="cert-image-card" key={img.src}>
-                <img src={img.src} alt={img.alt} />
-              </div>
-            ))}
+        <section className="section alt">
+          <div className="container">
+            <Reveal>
+              <p className="eyebrow" style={{ display: "flex", justifyContent: "center" }}>
+                Certificates on file
+              </p>
+            </Reveal>
+            <Reveal className="cert-row">
+              {page.images.map((img) => (
+                <div className="cert-card" key={img.src}>
+                  <img src={img.src} alt={img.alt} loading="lazy" />
+                </div>
+              ))}
+            </Reveal>
           </div>
         </section>
       )}

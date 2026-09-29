@@ -1,11 +1,19 @@
-import { ArrowRight } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
-import { Reveal } from "@/components/Reveal";
+import { Reveal, RevealStagger, staggerItem } from "@/components/Reveal";
+import { MaskLines } from "@/components/motion";
 import CTASection from "@/components/CTASection";
 import DomeGallery from "@/components/ui/DomeGallery";
 import { clients, hardwarePartners, serviceGeography } from "@/data/site";
+
+const trustLinks = [
+  { href: "/clientele/certifications", title: "Certifications", desc: "ISO 9001:2008 and our quality policy" },
+  { href: "/clientele/our-approach", title: "Our approach", desc: "How we take on a project" },
+  { href: "/clientele/assurance", title: "Assurance", desc: "Warranty and after sales support" },
+];
 
 export default function Clientele() {
   const galleryImages = clients.map((c) => ({ src: c.logo, alt: c.name }));
@@ -14,7 +22,7 @@ export default function Clientele() {
     <Layout>
       <PageHero
         index="06"
-        section="CLIENTELE"
+        section="Clientele"
         eyebrow="Trusted across sectors"
         title={
           <>
@@ -23,64 +31,80 @@ export default function Clientele() {
             <span>real projects.</span>
           </>
         }
-        lead="From national infrastructure to regional institutions, our door systems are specified where reliability isn't optional. Drag to explore who we've worked with."
+        lead="From national infrastructure to regional hospitals, our door systems are specified where reliability isn't optional. Drag the dome to explore who we've worked with."
       />
 
-      <section className="section-pad" style={{ paddingBottom: 40 }}>
-        <div className="section-index">
-          02 <span>/ CLIENTS</span>
-        </div>
-        <Reveal className="client-dome">
-          <DomeGallery images={galleryImages} grayscale={false} segments={30} fit={0.55} />
-        </Reveal>
-      </section>
-
-      <section className="section-pad" style={{ paddingTop: 0 }}>
-        <Reveal>
-          <p className="eyebrow" style={{ textAlign: "center" }}>
-            Service geography
-          </p>
-          <div className="geo-row" style={{ marginTop: 20 }}>
-            {serviceGeography.map((city) => (
-              <span className="geo-chip" key={city}>
-                {city}
-              </span>
-            ))}
-          </div>
-        </Reveal>
-
-        <div className="trust-links">
-          <Link href="/clientele/certifications">
-            <b>Certifications</b>
-            <span>ISO 9001:2008 and our quality policy</span>
-            <ArrowRight size={16} />
-          </Link>
-          <Link href="/clientele/our-approach">
-            <b>Our Approach</b>
-            <span>How we take on a project</span>
-            <ArrowRight size={16} />
-          </Link>
-          <Link href="/clientele/assurance">
-            <b>Assurance</b>
-            <span>Warranty and after-sales support</span>
-            <ArrowRight size={16} />
-          </Link>
+      <section className="section">
+        <div className="container">
+          <Reveal className="client-dome">
+            <DomeGallery images={galleryImages} grayscale={false} segments={30} fit={0.55} overlayBlurColor="#ffffff" />
+          </Reveal>
         </div>
       </section>
 
-      <section className="section-pad dark-section" style={{ paddingTop: 60 }}>
-        <Reveal>
-          <p className="eyebrow light" style={{ textAlign: "center" }}>
-            <span className="amber-dot" /> Hardware sourced from
-          </p>
-          <div className="partner-row" style={{ justifyContent: "center", marginTop: 24 }}>
-            {hardwarePartners.map((partner) => (
-              <span className="partner-chip" key={partner}>
-                {partner}
-              </span>
-            ))}
+      <section className="section alt">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <Reveal>
+                <p className="eyebrow">{clients.length} organisations and counting</p>
+              </Reveal>
+              <MaskLines as="h2" className="display-lg" lines={["Every client,", "at a glance."]} accent={[1]} delay={0} />
+            </div>
+            <Reveal delay={0.1}>
+              <p className="body-copy">Hospitals, automotive plants, research institutions, utilities and developers who rely on Steeltech openings every day.</p>
+            </Reveal>
           </div>
-        </Reveal>
+          <RevealStagger className="logo-wall" stagger={0.02}>
+            {clients.map((c) => (
+              <motion.div variants={staggerItem} key={c.file}>
+                <img src={c.logo} alt={c.name} loading="lazy" />
+              </motion.div>
+            ))}
+          </RevealStagger>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <Reveal>
+            <p className="eyebrow" style={{ display: "flex", justifyContent: "center" }}>
+              Service geography
+            </p>
+            <div className="geo-row">
+              {serviceGeography.map((city) => (
+                <span className="geo-chip" key={city}>
+                  {city}
+                </span>
+              ))}
+            </div>
+          </Reveal>
+
+          <RevealStagger className="card-grid" style={{ marginTop: 64 }}>
+            {trustLinks.map((l) => (
+              <motion.div variants={staggerItem} key={l.href}>
+                <Link href={l.href} className="info-card link-card">
+                  <h3>{l.title}</h3>
+                  <p>{l.desc}</p>
+                  <span className="arrow" aria-hidden="true">
+                    <ArrowUpRight size={16} />
+                  </span>
+                </Link>
+              </motion.div>
+            ))}
+          </RevealStagger>
+
+          <Reveal style={{ marginTop: 64, textAlign: "center" }}>
+            <p className="eyebrow">Hardware sourced from</p>
+            <div className="partner-row" style={{ justifyContent: "center" }}>
+              {hardwarePartners.map((partner) => (
+                <span className="partner-chip" key={partner}>
+                  {partner}
+                </span>
+              ))}
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       <CTASection

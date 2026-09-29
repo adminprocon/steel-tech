@@ -12,8 +12,11 @@ export default function Layout({ children }: { children: ReactNode }) {
 
   return (
     <div className="site-shell" id="top">
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
       <Header />
-      <main>{children}</main>
+      <main id="main">{children}</main>
       <Footer />
     </div>
   );

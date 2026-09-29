@@ -1,22 +1,19 @@
-import { Reveal } from "./Reveal";
+import { motion } from "framer-motion";
+import { RevealStagger, staggerItem } from "./Reveal";
+import { CountUp } from "./motion";
 import { stats } from "@/data/site";
 
-export default function StatStrip() {
+export default function StatStrip({ className = "" }: { className?: string }) {
   return (
-    <Reveal className="stat-strip">
+    <RevealStagger className={`stat-row ${className}`}>
       {stats.map((stat) => (
-        <div key={stat.value}>
-          <strong>{stat.value}</strong>
-          <span>
-            {stat.label.split("\n").map((line, i) => (
-              <span key={i}>
-                {line}
-                <br />
-              </span>
-            ))}
-          </span>
-        </div>
+        <motion.div variants={staggerItem} className="stat" key={stat.value}>
+          <strong>
+            <CountUp value={stat.value} />
+          </strong>
+          <span>{stat.label}</span>
+        </motion.div>
       ))}
-    </Reveal>
+    </RevealStagger>
   );
 }
