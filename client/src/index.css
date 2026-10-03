@@ -442,9 +442,13 @@ p { text-wrap: pretty; }
 .footer-cols a:hover { color: var(--red); }
 .footer-wordmark { font: 700 clamp(72px, 17.5vw, 320px)/0.8 var(--font-display); letter-spacing: -0.06em; color: var(--paper-2); text-align: center; margin: 0; user-select: none; white-space: nowrap; }
 .footer-wordmark span { color: var(--red-wash); }
-.footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 24px; padding-bottom: 32px; border-top: 1px solid var(--line); font: 500 12px var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted-ink); }
+.footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 24px; padding-bottom: 24px; border-top: 1px solid var(--line); font: 500 12px var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted-ink); }
 .footer-bottom a { color: var(--ink); display: inline-flex; gap: 8px; align-items: center; }
 .footer-bottom a:hover { color: var(--red); }
+.footer-credit { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding-top: 16px; padding-bottom: 24px; border-top: 1px solid var(--line); font-size: 12px; line-height: 16px; color: var(--muted-ink); }
+.footer-credit b { color: var(--ink); font-weight: 600; }
+.footer-credit a { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; font-weight: 600; color: var(--ink); transition: color 200ms ease; }
+.footer-credit a:hover { color: var(--red); }
 
 /* ---------- Inner page hero ---------- */
 .page-hero { position: relative; padding: calc(var(--header-h) + 96px) 0 clamp(56px, 6vw, 96px); border-bottom: 1px solid var(--line); overflow: hidden; }

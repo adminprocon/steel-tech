@@ -1,4 +1,4 @@
-import { ArrowUp, ArrowUpRight } from "lucide-react";
+import { ArrowUp, ArrowUpRight, Instagram } from "lucide-react";
 import { Link } from "wouter";
 import { contact, navItems, products } from "@/data/site";
 
@@ -53,6 +53,14 @@ export default function Footer() {
         <span>Engineered access since 1995</span>
         <a href="#top">
           Back to top <ArrowUp size={14} />
+        </a>
+      </div>
+      <div className="container footer-credit">
+        <span>
+          Designed and developed by <b>stat6</b> · Aarupadaiyar KJ
+        </span>
+        <a href="https://www.instagram.com/theleveragegame/" target="_blank" rel="noopener noreferrer" aria-label="theleveragegame on Instagram (opens in a new tab)">
+          <Instagram size={14} /> @theleveragegame
         </a>
       </div>
     </footer>
